@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowRight, SearchIcon, Stars } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export default function Header({ darkMode }: { darkMode?: boolean }) {
+export default function page() {
 
   return (
     <div className="flex flex-col w-full">
@@ -48,7 +48,7 @@ export default function Header({ darkMode }: { darkMode?: boolean }) {
             ) : (
               <Link href={"/auth/sign-in"}>
                 <Button
-                  className={cn({ "text-white": darkMode })}
+                  className={cn({ })}
                   variant="gradient"
                 >
                   Get started
