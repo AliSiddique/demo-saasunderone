@@ -7,6 +7,13 @@ export function FeaturesTwo() {
     </div>
   );
 }
+
+interface Project {
+    title: string;
+    description: string;
+    link: string;
+    }
+    
 export const projects = [
   {
     title: "Stripe",
@@ -44,4 +51,4 @@ export const projects = [
       "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
     link: "https://microsoft.com",
   },
-];
+] satisfies Project[]

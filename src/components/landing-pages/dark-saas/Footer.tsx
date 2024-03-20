@@ -46,6 +46,15 @@ const Footer = () => {
 
 export default Footer;
 
+interface LinkTags {
+    label: string;
+    url: string;
+
+}
+ interface Link {
+    title: string;
+    links: LinkTags[]
+}
 const links = [
 	{
 		"title": "Product",
@@ -167,4 +176,4 @@ const links = [
 			}
 		]
 	}
-]
+] satisfies Link[]
