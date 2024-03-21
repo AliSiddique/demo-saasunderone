@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 export default function RootLayout({
   session,
   children,
-}: Readonly<{
+}: {
   session:Session;
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={inter.className}>
