@@ -13,17 +13,15 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  session,
   children,
-}: {
-  session:Session;
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
       <body className={inter.className}>
         <Toaster position="top-right" />
-      <SessionProviderContext session={session}>
+      <SessionProviderContext>
 
         {children}
         </SessionProviderContext >
