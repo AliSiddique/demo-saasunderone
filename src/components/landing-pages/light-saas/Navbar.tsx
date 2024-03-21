@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useSession } from 'next-auth/react'
 
 export default function Navbar ()  {
 
   const [state, setState] = useState(false)
+  const {data:session} = useSession();
 
   // Replace javascript:void(0) path with your path
   const navigation = [
@@ -59,7 +61,7 @@ export default function Navbar ()  {
               </div>
               <div className="hidden md:inline-block">
                 <a href="javascript:void(0)" className="py-3 px-4 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow">
-                    Get Started
+                    { session ? "Dashboard" : "Login" }
                 </a>
               </div>
           </div>

@@ -4,6 +4,9 @@ import EmailProvider from 'next-auth/providers/email';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import { NextAuthOptions } from 'next-auth';
 import { db } from '../../prisma/db';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY!);
 
 const adapter = PrismaAdapter(db);
 export const authOptions: NextAuthOptions = {
@@ -32,7 +35,12 @@ export const authOptions: NextAuthOptions = {
       from: process.env.SMTP_FROM,
       async sendVerificationRequest({ identifier, url, provider }: any) {
       
-       
+        const { data, error } = await resend.emails.send({
+          from: process.env.SMTP_FROM as string,
+          to: identifier,
+          subject: 'Thank you for signing up to our wait list!',
+          text: `Please click the link below to verify your email address: ${url}`,
+        });
       },
     }),
   ],
