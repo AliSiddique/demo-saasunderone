@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react'
 
 type Props = {}
 
-export default function page({}: Props) {
+export default function Page({}: Props) {
     const {data: session} = useSession()
   return (
     <div>

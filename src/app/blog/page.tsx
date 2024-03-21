@@ -11,7 +11,7 @@ export default async function page({}: Props) {
     <div>
                   <div className='-m-4 flex flex-wrap'>
             {posts.map((blog: any) => (
-              <div className='p-4 md:w-1/3'>
+              <div key={blog.meta.slug} className='p-4 md:w-1/3'>
                 <div className='h-full overflow-hidden rounded-lg border-2 border-gray-200 border-opacity-60'>
                   <img
                     className='w-full object-cover object-center md:h-36 lg:h-48'
