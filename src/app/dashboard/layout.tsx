@@ -1,3 +1,4 @@
+import { DashboardHead } from "@/components/ui/DashboardHead";
 import type { Metadata } from "next";
 
 
@@ -14,6 +15,7 @@ export default function Dashboardlayout({
 }>) {
   return (
    <div>
+    <DashboardHead />
     {children}
    </div>
   );
