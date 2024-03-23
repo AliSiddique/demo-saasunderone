@@ -43,7 +43,7 @@ export function DashboardHead() {
   const { setTheme } = useTheme()
 
   return (
-    <div className="flex flex-col w-full bg-white z-50">
+    <div className="flex flex-col w-full  z-50">
       <div className="w-full top-0 h-16  grid items-center z-[100] bg-surface border-b border-border">
         <div className="flex items-center justify-between max-w-7xl mx-auto w-full relative px-4">
           <div className="flex items-center gap-4 ">

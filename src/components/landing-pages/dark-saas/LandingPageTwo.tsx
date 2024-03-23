@@ -5,6 +5,7 @@ import CTATwo from './CTA'
 import Footer from './Footer'
 import LogoCloud from '../light-saas/LogoCloud'
 import HeroTwo from './Hero'
+import { FAQTwo } from './FAQ'
 
 type Props = {}
 
@@ -16,6 +17,7 @@ export default function LandingPageTwo({}: Props) {
         <HeroTwo />
     <LogoCloud />
         <FeaturesTwo />
+        <FAQTwo />
         <CTATwo />
         <Footer />
     </div>

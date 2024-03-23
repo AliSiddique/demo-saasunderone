@@ -41,8 +41,8 @@ export default function page({}: Props) {
   return (
     <div className='mx-auto max-w-5xl px-4'>
       <Label>Email</Label>
-      <Input disabled value={session?.user?.email as string} placeholder='Email' type='email' className='text-gray-800' />
-        <Card className='bg-white border-gray-300 px-0 mt-5'>
+      <Input  disabled value={session?.user?.email as string} placeholder='Email' type='email' className='text-gray-800 dark:text-white' />
+        <Card className=' border-gray-300 px-0 mt-5'>
             <CardHeader>Billing</CardHeader>
            
            <CardContent>
