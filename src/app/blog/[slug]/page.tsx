@@ -1,3 +1,4 @@
+import Navbar from '@/components/landing-pages/light-saas/Navbar';
 import { getPostBySlug } from '@/lib/mdx';
 import Image from 'next/image';
 import React from 'react'
@@ -15,6 +16,8 @@ export default async function page({params}: Props) {
     const { meta, content }: any = await getPageContent(params.slug);
 
   return (
+    <div>
+<Navbar />
     <div className='text-align prose mx-auto max-w-3xl bg-white px-6 py-32 text-base leading-7 text-gray-700 lg:px-8'>
     <img
       src={meta.featuredimage}
@@ -25,5 +28,7 @@ export default async function page({params}: Props) {
     />
     {content}
   </div>
+  </div>
+
   )
 }

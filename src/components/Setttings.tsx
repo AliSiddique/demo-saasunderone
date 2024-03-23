@@ -12,24 +12,16 @@ export const metadata: Metadata = {
 const sidebarNavItems = [
   {
     title: "Profile",
-    href: "/examples/forms",
+    href: "/dashboard/settings",
   },
   {
     title: "Account",
-    href: "/examples/forms/account",
+    href: "/dashboard/settings/account",
   },
   {
     title: "Appearance",
-    href: "/examples/forms/appearance",
-  },
-  {
-    title: "Notifications",
-    href: "/examples/forms/notifications",
-  },
-  {
-    title: "Display",
-    href: "/examples/forms/display",
-  },
+    href: "/dashboard/settings/appearance",
+  }
 ]
 
 interface SettingsLayoutProps {

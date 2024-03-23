@@ -31,7 +31,7 @@ import {
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
 import { cn } from "@/lib/utils";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { Button } from "./button";
 import { useState } from "react";
@@ -43,8 +43,8 @@ export function DashboardHead() {
   const { setTheme } = useTheme()
 
   return (
-    <div className="flex flex-col w-full">
-      <div className="w-full top-0 h-16 fixed grid items-center z-[100] bg-surface border-b border-border">
+    <div className="flex flex-col w-full bg-white z-50">
+      <div className="w-full top-0 h-16  grid items-center z-[100] bg-surface border-b border-border">
         <div className="flex items-center justify-between max-w-7xl mx-auto w-full relative px-4">
           <div className="flex items-center gap-4 ">
             <Link href={"/"} className="flex items-center gap-1 text-primary">
@@ -52,14 +52,14 @@ export function DashboardHead() {
             </Link>
           </div>
           <div className="sm:flex hidden items-center gap-4">
-            <Link href={"/#pricing"}>
+            <Link href={"/dashboard"}>
               <Button variant="ghost" className={""}>
-                Pricing
+                Dashboard
               </Button>
             </Link>
-            <Link href={"/#features"}>
+            <Link href={"/dashboard/settings"}>
               <Button variant="ghost" className={""}>
-                Features
+                Settings
               </Button>
             </Link>
             <Link href={"/blog"}>
@@ -157,7 +157,7 @@ export function DashboardHead() {
             <span>API</span>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={() => signOut()}>
             <LogOut className="mr-2 h-4 w-4" />
             <span>Log out</span>
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>

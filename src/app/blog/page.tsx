@@ -1,3 +1,4 @@
+import Navbar from '@/components/landing-pages/light-saas/Navbar';
 import { getAllPosts } from '@/lib/mdx';
 import Link from 'next/link';
 import React from 'react'
@@ -9,7 +10,8 @@ export default async function page({}: Props) {
 
   return (
     <div>
-                  <div className='-m-4 flex flex-wrap'>
+      <Navbar />
+                  <div className='-m-4 flex flex-wrap mx-auto max-w-7xl py-5'>
             {posts.map((blog: any) => (
               <div key={blog.meta.slug} className='p-4 md:w-1/3'>
                 <div className='h-full overflow-hidden rounded-lg border-2 border-gray-200 border-opacity-60'>

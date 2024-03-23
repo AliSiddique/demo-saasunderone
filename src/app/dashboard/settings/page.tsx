@@ -5,11 +5,15 @@ import { Card } from '@/components/ui/card-hover'
 import React, { FormEvent } from 'react'
 import { loadStripe } from '@stripe/stripe-js';
 import { toast } from 'sonner';
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { useSession } from 'next-auth/react'
 
 
 type Props = {}
 
 export default function page({}: Props) {
+  const {data:session} = useSession();
     const [isLoading, setIsLoading] = React.useState(false);
     async function handleSubmit(event: FormEvent) {
         event.preventDefault();
@@ -35,8 +39,10 @@ export default function page({}: Props) {
         }
       }
   return (
-    <div >
-        <Card className='bg-white'>
+    <div className='mx-auto max-w-5xl px-4'>
+      <Label>Email</Label>
+      <Input disabled value={session?.user?.email as string} placeholder='Email' type='email' className='text-gray-800' />
+        <Card className='bg-white border-gray-300 px-0 mt-5'>
             <CardHeader>Billing</CardHeader>
            
            <CardContent>
