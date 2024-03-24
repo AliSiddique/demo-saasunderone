@@ -65,7 +65,7 @@ export default function DashboardHead() {
             href="/dashboard/settings"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Settings 
+            Settings
           </Link>
         </nav>
         <Sheet>
