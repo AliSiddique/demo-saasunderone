@@ -3,6 +3,7 @@ import { stripe } from "@/lib/stripe";
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import getCurrentUser from "@/lib/User";
+import { config } from "../../../../config";
 
 export async function POST(req: Request) {
   try {
@@ -28,8 +29,8 @@ export async function POST(req: Request) {
         },
       ],
 
-      success_url: `${req.url}/success`,
-      cancel_url: `${req.url}/#pricing`,
+      success_url: `${config.siteUrl}/dashboard/settings`,
+      cancel_url: `${config.siteUrl}/dashboard/settings`,
     };
 
     const checkoutSession: Stripe.Checkout.Session =

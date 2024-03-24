@@ -22,7 +22,7 @@ interface Config {
 }
 export const config = {
   name: "SaaS Under One",
-  siteUrl: "https://saasunderone.com",
+  siteUrl: "https://demo.saasunderone.com",
   title: "SaaS Under One",
   description: "Example description",
   fromEmail: "noreply@capitalshouse.com",
@@ -30,14 +30,14 @@ export const config = {
   opengraphTitle: "SaaS Under One",
   opengraphDescription:
     "SaaS Under One is a platform for building, launching, and scaling your SaaS business.",
-  opengraphUrl: "https://saasunderone.com",
+  opengraphUrl: "https://demo.saasunderone.com",
   opengraphSiteName: "SaaS Under One",
   opengraphType: "website",
   twitterTitle: "SaaS Under One",
   twitterDescription:
     "SaaS Under One is a platform for building, launching, and scaling your SaaS business.",
   twitterImage: "/og.png",
-  twitterUrl: "https://saasunderone.com",
+  twitterUrl: "https://demo.saasunderone.com",
   twitterCard: "summary_large_image",
   category: "SAAS",
   googleAnalyticsId: "UA-123456789-0",
