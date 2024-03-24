@@ -85,7 +85,7 @@ export default function ProfileForm({isPro}: Props) {
           <div className="flex justify-end">
             {isPro ? (
                  <Button
-                 onClick={(e) => handleCheckout(e)}
+                 onClick={(e) => handlePortal(e)}
                  variant={"default"}
                  className=""
                >
@@ -93,7 +93,8 @@ export default function ProfileForm({isPro}: Props) {
                </Button>
             ): (
                 <Button
-                onClick={(e) => handlePortal(e)}
+                onClick={(e) => handleCheckout(e)}
+
                 variant={"default"}
                 className=""
               >
