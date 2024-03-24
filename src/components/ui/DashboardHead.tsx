@@ -62,28 +62,10 @@ export default function DashboardHead() {
             Dashboard
           </Link>
           <Link
-            href="#"
+            href="/dashboard/settings"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Orders
-          </Link>
-          <Link
-            href="#"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Products
-          </Link>
-          <Link
-            href="#"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Customers
-          </Link>
-          <Link
-            href="#"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Analytics
+            Settings 
           </Link>
         </nav>
         <Sheet>
