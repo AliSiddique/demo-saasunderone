@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { ChevronDownIcon } from "@radix-ui/react-icons"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { useTheme } from "next-themes"
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ChevronDownIcon } from "@radix-ui/react-icons";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { useTheme } from "next-themes";
 
-import { cn } from "@/lib/utils"
-import { Button, buttonVariants } from "../ui/button"
+import { cn } from "@/lib/utils";
+import { Button, buttonVariants } from "../ui/button";
 import {
   Form,
   FormControl,
@@ -16,9 +16,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../ui/form"
-import { RadioGroup, RadioGroupItem } from "../ui/radio-group"
-import { toast } from "../ui/use-toast"
+} from "../ui/form";
+import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { toast } from "../ui/use-toast";
 
 const appearanceFormSchema = z.object({
   theme: z.enum(["light", "dark"], {
@@ -28,21 +28,21 @@ const appearanceFormSchema = z.object({
     invalid_type_error: "Select a font",
     required_error: "Please select a font.",
   }),
-})
+});
 
-type AppearanceFormValues = z.infer<typeof appearanceFormSchema>
+type AppearanceFormValues = z.infer<typeof appearanceFormSchema>;
 
 // This can come from your database or API.
 const defaultValues: Partial<AppearanceFormValues> = {
   theme: "light",
-}
+};
 
 export function AppearanceForm() {
-  const {setTheme} = useTheme()
+  const { setTheme } = useTheme();
   const form = useForm<AppearanceFormValues>({
     resolver: zodResolver(appearanceFormSchema),
     defaultValues,
-  })
+  });
 
   function onSubmit(data: AppearanceFormValues) {
     toast({
@@ -52,7 +52,7 @@ export function AppearanceForm() {
           <code className="text-white">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
-    })
+    });
   }
 
   return (
@@ -69,7 +69,7 @@ export function AppearanceForm() {
                   <select
                     className={cn(
                       buttonVariants({ variant: "outline" }),
-                      "w-[200px] appearance-none font-normal"
+                      "w-[200px] appearance-none font-normal",
                     )}
                     {...field}
                   >
@@ -162,5 +162,5 @@ export function AppearanceForm() {
         <Button type="submit">Update preferences</Button>
       </form>
     </Form>
-  )
+  );
 }

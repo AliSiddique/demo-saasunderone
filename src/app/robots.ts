@@ -1,11 +1,12 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
+import { config } from "../../config";
 
 export default function robots(): MetadataRoute.Robots {
-  let sitename = process.env.SITE_NAME || 'https://example.com';
+  let sitename = config.siteUrl;
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
+      userAgent: "*",
+      allow: "/",
     },
     sitemap: `${sitename}/sitemap.xml`,
   };

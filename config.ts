@@ -1,33 +1,46 @@
-
-
-
-const config = {
-    name: 'config',
-    siteUrl: 'https://www.example.com',
-    title: 'Example',
-    description: 'Example description',
-    lang: 'en',
-    locale: 'en_US',
-    fbAppId: '123456789',
-    twitterHandle: '@example',
-    themeColor: '#000000',
-    backgroundColor: '#ffffff',
-    favicon: '/favicon.ico',
-    shortName: 'Example',
-    startUrl: '/',
-    display: 'standalone',
-    icon: '/icon.png',
-    maskableIcon: '/maskable_icon.png',
-    msTileImage: '/ms_tile_image.png',
-    appleMaskIcon: '/apple_mask_icon.png',
-    gcmSenderId: '123456789',
-    vapidPublicKey: 'VAPID_PUBLIC_KEY',
-    googleAnalyticsId: 'UA-123456789-1',
-    gtmId: 'GTM-123456789',
-    gtmAuth: 'GTM-123456789',
-    gtmPreview: 'env-1',
-    gtmCookiesWin: 'x',
-    gtmCookies: 'x',
-    gtmPreviewEnv: '1',
-    
+interface Config {
+  name: string;
+  siteUrl: string;
+  title: string;
+  description: string;
+  fromEmail: string;
+  twitterHandle: string;
+  opengraphTitle: string;
+  opengraphDescription: string;
+  opengraphUrl: string;
+  opengraphSiteName: string;
+  opengraphType: string;
+  twitterTitle: string;
+  twitterDescription: string;
+  twitterImage: string;
+  twitterUrl: string;
+  twitterCard: string;
+  category: string;
+  googleAnalyticsId: string;
+  googleVerification: string;
+  yandexVerification: string;
 }
+export const config = {
+  name: "SaaS Under One",
+  siteUrl: "https://saasunderone.com",
+  title: "SaaS Under One",
+  description: "Example description",
+  fromEmail: "noreply@capitalshouse.com",
+  twitterHandle: "@saasunderone",
+  opengraphTitle: "SaaS Under One",
+  opengraphDescription:
+    "SaaS Under One is a platform for building, launching, and scaling your SaaS business.",
+  opengraphUrl: "https://saasunderone.com",
+  opengraphSiteName: "SaaS Under One",
+  opengraphType: "website",
+  twitterTitle: "SaaS Under One",
+  twitterDescription:
+    "SaaS Under One is a platform for building, launching, and scaling your SaaS business.",
+  twitterImage: "/og.png",
+  twitterUrl: "https://saasunderone.com",
+  twitterCard: "summary_large_image",
+  category: "SAAS",
+  googleAnalyticsId: "UA-123456789-0",
+  googleVerification: "google",
+  yandexVerification: "yandex",
+} as Config;

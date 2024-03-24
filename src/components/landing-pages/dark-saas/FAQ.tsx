@@ -1,13 +1,13 @@
 import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-  } from "@/components/ui/accordion"
-  
-  export function FAQTwo() {
-    return (
-        <div className=" text-white py-20 mx-auto max-w-5xl">
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+export function FAQTwo() {
+  return (
+    <div className=" text-white py-20 mx-auto max-w-5xl">
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>Is it accessible?</AccordionTrigger>
@@ -31,6 +31,5 @@ import {
         </AccordionItem>
       </Accordion>
     </div>
-    )
-  }
-  
+  );
+}

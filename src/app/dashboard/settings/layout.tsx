@@ -7,10 +7,8 @@ export default function SidebarLayout({
   children: React.ReactNode;
 }>) {
   return (
-   <div>
-    <SettingsLayout >
-    {children}
-    </SettingsLayout>
-   </div>
+    <div>
+      <SettingsLayout>{children}</SettingsLayout>
+    </div>
   );
 }

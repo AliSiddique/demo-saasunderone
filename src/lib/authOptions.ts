@@ -1,17 +1,16 @@
-import GithubProvider from 'next-auth/providers/github';
-import GoogleProvider from 'next-auth/providers/google';
-import EmailProvider from 'next-auth/providers/email';
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import { NextAuthOptions } from 'next-auth';
-import { db } from '../../prisma/db';
-import { resend } from './resend';
-
+import GithubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
+import EmailProvider from "next-auth/providers/email";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { NextAuthOptions } from "next-auth";
+import { db } from "../../prisma/db";
+import { resend } from "./resend";
 
 const adapter = PrismaAdapter(db);
 export const authOptions: NextAuthOptions = {
   adapter,
   session: {
-    strategy: 'jwt',
+    strategy: "jwt",
   },
   providers: [
     GithubProvider({
@@ -33,20 +32,17 @@ export const authOptions: NextAuthOptions = {
       },
       from: process.env.SMTP_FROM,
       async sendVerificationRequest({ identifier, url, provider }: any) {
-      
         const { data, error } = await resend.emails.send({
           from: process.env.SMTP_FROM as string,
           to: identifier,
-          subject: 'Thank you for signing up to our wait list!',
+          subject: "Thank you for signing up to our wait list!",
           text: `Please click the link below to verify your email address: ${url}`,
         });
-        
       },
-     
     }),
   ],
   pages: {
-    signIn: '/login',
+    signIn: "/login",
   },
   secret: process.env.SECRET,
   callbacks: {
@@ -80,7 +76,7 @@ export const authOptions: NextAuthOptions = {
       };
     },
     redirect() {
-      return '/dashboard';
+      return "/dashboard";
     },
   },
 };

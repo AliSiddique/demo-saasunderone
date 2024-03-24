@@ -1,7 +1,5 @@
-import  DashboardHead  from "@/components/ui/DashboardHead";
+import DashboardHead from "@/components/ui/DashboardHead";
 import type { Metadata } from "next";
-
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +12,9 @@ export default function Dashboardlayout({
   children: React.ReactNode;
 }>) {
   return (
-   <div>
-    <DashboardHead />
-    {children}
-   </div>
+    <div>
+      <DashboardHead />
+      {children}
+    </div>
   );
 }

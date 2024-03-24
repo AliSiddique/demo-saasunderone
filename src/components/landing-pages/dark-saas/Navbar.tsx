@@ -12,18 +12,18 @@ export default function NavbarTwo() {
     {
       name: "About",
       link: "/about",
-      icon: <MessageCircle className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: (
+        <MessageCircle className="h-4 w-4 text-neutral-500 dark:text-white" />
+      ),
     },
     {
       name: "Contact",
       link: "/contact",
-      icon: (
-        <User2Icon className="h-4 w-4 text-neutral-500 dark:text-white" />
-      ),
+      icon: <User2Icon className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
   ];
   return (
-    <div >
+    <div>
       <FloatingNav navItems={navItems} />
     </div>
   );

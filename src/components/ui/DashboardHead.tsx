@@ -1,5 +1,5 @@
-"use client"
-import Link from "next/link"
+"use client";
+import Link from "next/link";
 import {
   Activity,
   ArrowUpRight,
@@ -10,22 +10,18 @@ import {
   Package2,
   Search,
   Users,
-} from "lucide-react"
+} from "lucide-react";
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -33,9 +29,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Table,
   TableBody,
@@ -43,11 +39,11 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-import { signOut, useSession } from "next-auth/react"
+} from "@/components/ui/table";
+import { signOut, useSession } from "next-auth/react";
 
 export default function DashboardHead() {
-  const {data:session} = useSession();
+  const { data: session } = useSession();
   return (
     <div className="flex  w-full flex-col">
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
@@ -155,10 +151,13 @@ export default function DashboardHead() {
             <DropdownMenuTrigger asChild>
               <Button variant="secondary" size="icon" className="rounded-full">
                 {session?.user?.image ? (
-                <img src={session?.user?.image} alt="User profile" className="h-5 w-5 rounded-full" />
-                ) : (  
+                  <img
+                    src={session?.user?.image}
+                    alt="User profile"
+                    className="h-5 w-5 rounded-full"
+                  />
+                ) : (
                   <CircleUser className="h-5 w-5" />
-
                 )}
                 <span className="sr-only">Toggle user menu</span>
               </Button>
@@ -169,12 +168,13 @@ export default function DashboardHead() {
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={() => signOut()}>Logout</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => signOut()}>
+                Logout
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
       </header>
- 
     </div>
-  )
+  );
 }

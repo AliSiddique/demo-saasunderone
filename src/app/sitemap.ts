@@ -1,7 +1,8 @@
-import { getAllPosts } from '@/lib/mdx';
+import { getAllPosts } from "@/lib/mdx";
+import { config } from "../../config";
 
 export default async function sitemap() {
-  let sitename = process.env.SITE_NAME || 'https://example.com';
+  let sitename = config.siteUrl;
   const posts = await getAllPosts();
 
   const postPaths =
