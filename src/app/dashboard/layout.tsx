@@ -1,4 +1,4 @@
-import { DashboardHead } from "@/components/ui/DashboardHead";
+import  DashboardHead  from "@/components/ui/DashboardHead";
 import type { Metadata } from "next";
 
 
