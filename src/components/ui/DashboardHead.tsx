@@ -56,7 +56,7 @@ export default function DashboardHead() {
             <span className="sr-only">Acme Inc</span>
           </Link>
           <Link
-            href="#"
+            href="/dashboard"
             className="text-foreground transition-colors hover:text-foreground"
           >
             Dashboard
@@ -88,7 +88,7 @@ export default function DashboardHead() {
                 <Package2 className="h-6 w-6" />
                 <span className="sr-only">Acme Inc</span>
               </Link>
-              <Link href="#" className="hover:text-foreground">
+              <Link href="/dashboard" className="hover:text-foreground">
                 Dashboard
               </Link>
               <Link
@@ -129,8 +129,11 @@ export default function DashboardHead() {
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/dashboard/settings">
+                Settings
+                </Link>
+                </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={() => signOut()}>
                 Logout

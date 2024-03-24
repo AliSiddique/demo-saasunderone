@@ -16,6 +16,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           textAlign: "center",
           display: "flex",
           justifyContent: "center",
+          color: "red",
         }}
       >
         {children}

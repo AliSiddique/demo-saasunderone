@@ -1,3 +1,4 @@
+import Footer from "@/components/landing-pages/light-saas/Footer";
 import Navbar from "@/components/landing-pages/light-saas/Navbar";
 import { getAllPosts } from "@/lib/mdx";
 import Link from "next/link";
@@ -21,10 +22,10 @@ export default async function page({}: Props) {
                 alt="blog"
               />
               <div className="p-6">
-                <h1 className="title-font mb-3 text-lg font-medium text-gray-900">
+                <h1 className="title-font mb-3 text-lg font-medium text-gray-700 dark:text-white">
                   {blog.meta.title}
                 </h1>
-                <p className="mb-3 leading-relaxed">{blog.meta.description}</p>
+                <p className="mb-3 leading-relaxed text-gray-700 dark:text-white">{blog.meta.description}</p>
                 <div className="flex flex-wrap items-center ">
                   <Link
                     href={`/blog/${blog.meta.slug}`}
@@ -50,6 +51,7 @@ export default async function page({}: Props) {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }
