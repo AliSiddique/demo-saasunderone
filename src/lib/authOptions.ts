@@ -46,7 +46,7 @@ export const authOptions: NextAuthOptions = {
   },
   secret: process.env.SECRET,
   callbacks: {
-    async session({ token, session }: any) {
+    async session({ token, session }) {
       if (token) {
         session.user.id = token.id;
         session.user.name = token.name;
@@ -56,7 +56,7 @@ export const authOptions: NextAuthOptions = {
 
       return session;
     },
-    async jwt({ token, user }: any) {
+    async jwt({ token, user }) {
       const dbUser = await db.user.findFirst({
         where: {
           email: token.email,
