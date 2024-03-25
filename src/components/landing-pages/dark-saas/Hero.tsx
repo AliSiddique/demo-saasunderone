@@ -30,7 +30,7 @@ const HeroTwo = () => {
             className="flex flex-col text-4xl font-semibold sm:gap-3 sm:text-5xl xl:text-6xl/none"
             variants={FADE_UP_ANIMATION}
           >
-            Search for any UK company <br />{" "}
+            Monitor your business <br />{" "}
             <span className="relative text-white">
               with{" "}
               <span>
@@ -43,8 +43,7 @@ const HeroTwo = () => {
             className="max-w-xs text-sm text-white sm:max-w-full sm:text-base"
             variants={FADE_UP_ANIMATION}
           >
-            Capitalshouse is a simple and intuitive company finder that helps
-            you search for any business <br className="hidden md:block" />
+            Start a free trial today and start your jounrey <br className="hidden md:block" />
             with ease and speed.
           </motion.p>
           <motion.div
@@ -57,36 +56,15 @@ const HeroTwo = () => {
                 Start free trial
               </Button>
             </Link>
+            <Link href="#pricing">
+              <Button variant="outline" className="flex items-center gap-2">
+                Learn more
+              </Button>
+            </Link>
 
-            {/* <Button variant='secondary'>Learn more</Button> */}
           </motion.div>
         </div>
-        {/* <div className='flex flex-col items-center justify-center gap-20'>
-          <div className='flex flex-col items-center gap-5'>
-            <div className='flex items-center justify-center'>
-              {Users.map((user, index) => {
-                return (
-                  <Image
-                    key={index}
-                    src={user.image}
-                    alt='User'
-                    height={40}
-                    width={40}
-                    objectFit='cover'
-                    className='-m-[5px] rounded-full border border-white'
-                  />
-                );
-              })}
-            </div>
-            <p className='text-sm text-gray-600'>
-              Trusted by over{' '}
-              <span className='text-base font-semibold text-primary'>
-                1,000+
-              </span>{' '}
-              businesses worldwide
-            </p>
-          </div>
-        </div> */}
+
       </motion.div>
     </>
   );

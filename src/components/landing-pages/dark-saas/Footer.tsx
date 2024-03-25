@@ -1,178 +1,155 @@
-import Link from "next/link";
+import { config } from "../../../../config";
 
-const Footer = () => {
+
+export default function Footer ()  {
   return (
-    <div className="flex items-start justify-start gap-8 w-full h-[100%] overflow-y-auto relative overflow-x-hidden bg-black">
-      <div className="flex flex-col items-start justify-start w-full p-5 sm:p-10 m-auto max-w-full lg:max-w-7xl gap-8">
-        <div className="flex items-start justify-between w-full h-full gap-12 lg:gap-28 lg:flex-row flex-col">
-          <h1 className="text-2xl font-bold">Zen.</h1>
-          <div className="flex items-start justify-between w-full h-full gap-8 flex-wrap">
-            {links.map((link, index) => (
-              <div className="flex flex-col items-start gap-4" key={index}>
-                <h3 className="text-lg font-bold">{link.title}</h3>
-                <ul className="flex flex-col items-start gap-3">
-                  {link.links.map((link, index) => (
-                    <Link
-                      href={link.url}
-                      key={index}
-                      className="hover:underline"
-                    >
-                      <li className="text-sm font-medium text-white/80">
-                        {link.label}
-                      </li>
-                    </Link>
-                  ))}
-                </ul>
-              </div>
-            ))}
+    <footer id="footer">
+      <hr className="w-11/12 mx-auto" />
+
+      <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
+        <div className="col-span-full xl:col-span-2">
+          <a
+            href="/"
+            className="font-bold text-xl flex"
+          >
+            <img src="/logo.png" alt="logo" className="h-8 w-8 rounded-full" />
+            
+          </a>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <h3 className="font-bold text-lg">Follow US</h3>
+          <div>
+            <a
+              href="#"
+              className="opacity-60 hover:opacity-100"
+            >
+              Github
+            </a>
+          </div>
+
+          <div>
+            <a
+              href="#"
+              className="opacity-60 hover:opacity-100"
+            >
+              Twitter
+            </a>
+          </div>
+
+          <div>
+            <a
+              href="#"
+              className="opacity-60 hover:opacity-100"
+            >
+              Dribbble
+            </a>
           </div>
         </div>
-        <div className="w-full h-[.5px] bg-slate-400/50"></div>
-        <div className="w-full flex items-center justify-between gap-4 md:flex-row flex-col">
-          <div className="flex items-center gap-4">
-            <p className="text-sm font-light text-white/60">© 2023</p>
-            <Link href="/terms" className="hover:underline">
-              <p className="text-sm font-light text-white/60">Terms</p>
-            </Link>
-            <Link href="/privacy" className="hover:underline">
-              <p className="text-sm font-light text-white/60">Privacy</p>
-            </Link>
+
+        <div className="flex flex-col gap-2">
+          <h3 className="font-bold text-lg">Platforms</h3>
+          <div>
+            <a
+              href="#"
+              className="opacity-60 hover:opacity-100"
+            >
+              Web
+            </a>
+          </div>
+
+          <div>
+            <a
+              href="#"
+              className="opacity-60 hover:opacity-100"
+            >
+              Mobile
+            </a>
+          </div>
+
+          <div>
+            <a
+              href="#"
+              className="opacity-60 hover:opacity-100"
+            >
+              Desktop
+            </a>
           </div>
         </div>
-      </div>
-    </div>
+
+        <div className="flex flex-col gap-2">
+          <h3 className="font-bold text-lg">About</h3>
+          <div>
+            <a
+              href="#"
+              className="opacity-60 hover:opacity-100"
+            >
+              Features
+            </a>
+          </div>
+
+          <div>
+            <a
+              href="#"
+              className="opacity-60 hover:opacity-100"
+            >
+              Pricing
+            </a>
+          </div>
+
+          <div>
+            <a
+              href="#"
+              className="opacity-60 hover:opacity-100"
+            >
+              FAQ
+            </a>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <h3 className="font-bold text-lg">Community</h3>
+          <div>
+            <a
+              href="#"
+              className="opacity-60 hover:opacity-100"
+            >
+              Youtube
+            </a>
+          </div>
+
+          <div>
+            <a
+              href="#"
+              className="opacity-60 hover:opacity-100"
+            >
+              Discord
+            </a>
+          </div>
+
+          <div>
+            <a
+              href="#"
+              className="opacity-60 hover:opacity-100"
+            >
+              Twitch
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="container pb-14 text-center">
+        <h3>
+          &copy; {new Date().getFullYear()} {" "}
+          <a
+            target="_blank"
+            href="https://github.com/leoMirandaa"
+            className="text-primary transition-all border-primary hover:border-b-2"
+          >
+           {config.title}
+          </a>
+        </h3>
+      </section>
+    </footer>
   );
 };
-
-export default Footer;
-
-interface LinkTags {
-  label: string;
-  url: string;
-}
-interface Link {
-  title: string;
-  links: LinkTags[];
-}
-const links = [
-  {
-    title: "Product",
-    links: [
-      {
-        label: "Features",
-        url: "/features",
-      },
-      {
-        label: "Pricing",
-        url: "/pricing",
-      },
-      {
-        label: "Integrations",
-        url: "/integrations",
-      },
-      {
-        label: "Security",
-        url: "/security",
-      },
-      {
-        label: "Enterprise",
-        url: "/enterprise",
-      },
-      {
-        label: "Customer Stories",
-        url: "/customers",
-      },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      {
-        label: "About",
-        url: "/about",
-      },
-      {
-        label: "Blog",
-        url: "/blog",
-      },
-      {
-        label: "Careers",
-        url: "/careers",
-      },
-      {
-        label: "Contact",
-        url: "/contact",
-      },
-      {
-        label: "Press",
-        url: "/press",
-      },
-      {
-        label: "Partners",
-        url: "/partners",
-      },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      {
-        label: "Help Center",
-        url: "/help",
-      },
-      {
-        label: "API Documentation",
-        url: "/api",
-      },
-      {
-        label: "Status",
-        url: "/status",
-      },
-      {
-        label: "Changelog",
-        url: "/changelog",
-      },
-      {
-        label: "Brand Assets",
-        url: "/brand",
-      },
-      {
-        label: "Legal",
-        url: "/legal",
-      },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      {
-        label: "Privacy Policy",
-        url: "/privacy",
-      },
-      {
-        label: "Terms of Service",
-        url: "/terms",
-      },
-      {
-        label: "Data Processing",
-        url: "/dpa",
-      },
-      {
-        label: "Cookie Policy",
-        url: "/cookies",
-      },
-      {
-        label: "GDPR",
-        url: "/gdpr",
-      },
-      {
-        label: "CCPA",
-        url: "/ccpa",
-      },
-      {
-        label: "Sitemap",
-        url: "/sitemap",
-      },
-    ],
-  },
-] satisfies Link[];

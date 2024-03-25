@@ -7,7 +7,8 @@ import {
 
 export function FAQTwo() {
   return (
-    <div className=" text-white py-20 mx-auto max-w-5xl">
+    <div className=" text-white py-20 mx-auto max-w-6xl">
+      <h1 className="text-4xl font-bold mb-10">FAQ</h1>
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>Is it accessible?</AccordionTrigger>

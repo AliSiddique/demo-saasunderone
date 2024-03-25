@@ -21,5 +21,5 @@ export const metadata = {
   category: config.category,
 };
 export default function page() {
-  return <LandingPageTwo />;
+  return <LandingPageOne />;
 }

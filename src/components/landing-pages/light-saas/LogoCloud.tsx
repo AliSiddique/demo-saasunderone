@@ -4,7 +4,7 @@ import Marquee from "react-fast-marquee";
 
 const LogoCloud: FC = () => {
   return (
-    <div className="md:max-w-7xl mt-10 w-full mx-auto">
+    <div className="md:max-w-7xl my-10 w-full mx-auto">
       <Marquee direction="left" autoFill pauseOnHover>
         {Images.map((image, index) => (
           <div className="mx-6" key={index}>
