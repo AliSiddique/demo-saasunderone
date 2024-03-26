@@ -33,9 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <GoogleAnalytics GA_TRACKING_ID={config.googleAnalyticsId} />
-      </Head>
+      </head>
       <body className={inter.className}>
         <Toaster position="top-right" />
         <SessionProviderContext>

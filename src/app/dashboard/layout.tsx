@@ -1,4 +1,5 @@
 import DashboardHead from "@/components/ui/DashboardHead";
+import ProtectedRoute from "@/lib/ProtectedRoute";
 import getCurrentUser from "@/lib/User";
 import { getUserSubscriptionPlan } from "@/lib/subscription";
 import type { Metadata } from "next";
@@ -10,7 +11,7 @@ export default async function Dashboardlayout({
 }>) {
   const user = await getCurrentUser();
   const isPro = await getUserSubscriptionPlan(user.id);
-  console.log(isPro);
+  ProtectedRoute();
   return (
     <div>
       <DashboardHead />
