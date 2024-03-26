@@ -8,6 +8,7 @@ import { resend } from "./resend";
 
 const adapter = PrismaAdapter(db);
 export const authOptions: NextAuthOptions = {
+  secret: process.env.SECRET!,
   adapter,
   session: {
     strategy: "jwt",
@@ -44,7 +45,6 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/login",
   },
-  secret: process.env.SECRET,
   callbacks: {
     async session({ token, session }) {
       if (token) {
