@@ -25,7 +25,9 @@ export default async function page({}: Props) {
                 <h1 className="title-font mb-3 text-lg font-medium text-gray-700 dark:text-white">
                   {blog.meta.title}
                 </h1>
-                <p className="mb-3 leading-relaxed text-gray-700 dark:text-white">{blog.meta.description}</p>
+                <p className="mb-3 leading-relaxed text-gray-700 dark:text-white">
+                  {blog.meta.description}
+                </p>
                 <div className="flex flex-wrap items-center ">
                   <Link
                     href={`/blog/${blog.meta.slug}`}

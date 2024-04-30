@@ -11,7 +11,7 @@ export default function CTATwo() {
             Start your free trial today.
             <br />
           </h2>
-     
+
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button size="lg" variant="outline">
               Get started

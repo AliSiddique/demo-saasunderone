@@ -5,20 +5,17 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-
 interface Navigation {
   title: string;
   href: string;
 }
-  const navigation:Navigation[] = [
-    { title: "Pricing", href: "#" },
-    { title: "Contact", href: "#" },
-  ];
+const navigation: Navigation[] = [
+  { title: "Pricing", href: "#" },
+  { title: "Contact", href: "#" },
+];
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { data: session } = useSession();
-
-
 
   return (
     <nav className=" backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200 sticky top-0 z-10   w-full  ">
@@ -85,11 +82,9 @@ export default function Navbar() {
         </div>
         <div className="hidden md:inline-block">
           <Button variant="outline" size="lg">
-          <Link
-            href={session ? "/dashboard" : "/login"}
-          >
-            {session ? "Dashboard" : "Login"}
-          </Link>
+            <Link href={session ? "/dashboard" : "/login"}>
+              {session ? "Dashboard" : "Login"}
+            </Link>
           </Button>
         </div>
       </div>

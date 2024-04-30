@@ -1,7 +1,7 @@
-import getCurrentUser from '@/lib/User';
-import { stripe } from '@/lib/stripe';
-import { db } from '../../../../prisma/db';
-import { config } from '../../../../config';
+import getCurrentUser from "@/lib/User";
+import { stripe } from "@/lib/stripe";
+import { db } from "../../../../prisma/db";
+import { config } from "../../../../config";
 
 export async function POST(req: Request) {
   try {

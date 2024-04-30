@@ -1,12 +1,9 @@
 // @ts-nocheck
 
-import { db } from "../../prisma/db"
-import { freePlan, proPlan } from "./plans"
+import { db } from "../../prisma/db";
+import { freePlan, proPlan } from "./plans";
 
-
-export async function getUserSubscriptionPlan(
-  userId: string
-): Promise{
+export async function getUserSubscriptionPlan(userId: string): Promise {
   const user = await db.user.findFirst({
     where: {
       id: userId,
@@ -17,23 +14,23 @@ export async function getUserSubscriptionPlan(
       stripeCustomerId: true,
       stripePriceId: true,
     },
-  })
+  });
 
   if (!user) {
-    throw new Error("User not found")
+    throw new Error("User not found");
   }
 
   // Check if user is on a pro plan.
   const isPro =
     user.stripePriceId &&
-    user.stripeCurrentPeriodEnd?.getTime() + 86_400_000 > Date.now()
+    user.stripeCurrentPeriodEnd?.getTime() + 86_400_000 > Date.now();
 
-  const plan = isPro ? proPlan:freePlan
+  const plan = isPro ? proPlan : freePlan;
 
   return {
     ...plan,
     ...user,
     stripeCurrentPeriodEnd: user.stripeCurrentPeriodEnd?.getTime(),
     isPro,
-  }
+  };
 }

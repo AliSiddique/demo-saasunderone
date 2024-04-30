@@ -130,10 +130,8 @@ export default function DashboardHead() {
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                <Link href="/dashboard/settings">
-                Settings
-                </Link>
-                </DropdownMenuItem>
+                <Link href="/dashboard/settings">Settings</Link>
+              </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={() => signOut()}>
                 Logout

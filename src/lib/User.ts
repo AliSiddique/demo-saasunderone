@@ -9,5 +9,5 @@ interface User {
 export default async function getCurrentUser() {
   const session = await getServerSession(authOptions);
 
-  return session?.user as User
+  return session?.user as User;
 }

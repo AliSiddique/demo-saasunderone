@@ -1,16 +1,16 @@
-import ProfileForm from '@/components/forms/ProfileForm'
-import getCurrentUser from '@/lib/User'
-import { getUserSubscriptionPlan } from '@/lib/subscription'
-import React from 'react'
+import ProfileForm from "@/components/forms/ProfileForm";
+import getCurrentUser from "@/lib/User";
+import { getUserSubscriptionPlan } from "@/lib/subscription";
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 export default async function page({}: Props) {
-  const user = await getCurrentUser()
-  const subscription = await getUserSubscriptionPlan(user.id)
+  const user = await getCurrentUser();
+  const subscription = await getUserSubscriptionPlan(user.id);
   return (
     <div>
       <ProfileForm isPro={subscription.isPro} />
     </div>
-  )
+  );
 }

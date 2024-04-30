@@ -43,7 +43,8 @@ const HeroTwo = () => {
             className="max-w-xs text-sm text-white sm:max-w-full sm:text-base"
             variants={FADE_UP_ANIMATION}
           >
-            Start a free trial today and start your jounrey <br className="hidden md:block" />
+            Start a free trial today and start your jounrey{" "}
+            <br className="hidden md:block" />
             with ease and speed.
           </motion.p>
           <motion.div
@@ -61,10 +62,8 @@ const HeroTwo = () => {
                 Learn more
               </Button>
             </Link>
-
           </motion.div>
         </div>
-
       </motion.div>
     </>
   );

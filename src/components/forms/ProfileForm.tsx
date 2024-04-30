@@ -11,10 +11,10 @@ import { useSession } from "next-auth/react";
 import { getUserSubscriptionPlan } from "@/lib/subscription";
 
 type Props = {
-    isPro: boolean;
+  isPro: boolean;
 };
 
-export default function ProfileForm({isPro}: Props) {
+export default function ProfileForm({ isPro }: Props) {
   const { data: session } = useSession();
   const [isLoading, setIsLoading] = React.useState(false);
   async function handleCheckout(event: FormEvent) {
@@ -76,32 +76,30 @@ export default function ProfileForm({isPro}: Props) {
           <div className="flex flex-col space-y-4">
             <p className="text-sm text-muted-foreground">
               Update your billing information. Manage your subscription and
-              billing preferences.
-              You are currently on the {isPro ? "Pro" : "Free"} plan.
+              billing preferences. You are currently on the{" "}
+              {isPro ? "Pro" : "Free"} plan.
             </p>
           </div>
         </CardContent>
         <CardFooter>
           <div className="flex justify-end">
             {isPro ? (
-                 <Button
-                 onClick={(e) => handlePortal(e)}
-                 variant={"default"}
-                 className=""
-               >
-                 Portal
-               </Button>
-            ): (
-                <Button
+              <Button
+                onClick={(e) => handlePortal(e)}
+                variant={"default"}
+                className=""
+              >
+                Portal
+              </Button>
+            ) : (
+              <Button
                 onClick={(e) => handleCheckout(e)}
-
                 variant={"default"}
                 className=""
               >
                 Subscribe
               </Button>
             )}
-           
           </div>
         </CardFooter>
       </Card>
