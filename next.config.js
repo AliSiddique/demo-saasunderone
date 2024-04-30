@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
-const withMDX = require("@next/mdx")();
+const { withContentlayer } = require('next-contentlayer')
 
-const nextConfig = {
-  domains: ["images.unsplash.com", "lh3.googleusercontent.com"],
-};
+/** @type {import('next').NextConfig} */
+const nextConfig = {  }
 
-module.exports = withMDX(nextConfig);
+module.exports = withContentlayer(nextConfig)

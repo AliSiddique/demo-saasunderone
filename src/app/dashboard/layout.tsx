@@ -11,7 +11,6 @@ export default async function Dashboardlayout({
   children: React.ReactNode;
 }>) {
   const user = await getCurrentUser();
-  const isPro = await getUserSubscriptionPlan(user.id);
   ProtectedRoute();
   return (
     <div>

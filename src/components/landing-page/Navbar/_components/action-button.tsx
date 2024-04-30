@@ -24,7 +24,7 @@ const ActionButtons = () => {
       <div className=" items-center justify-center flex ">
         <div className="flex xl:space-x-4">
           <Link
-            href={"/contact-sales"}
+            href={"/login"}
             className="
             lg:flex
             items-center
@@ -46,7 +46,7 @@ const ActionButtons = () => {
         </div>
 
         <div className="flex lg:space-x-4 items-center pr-4">
-          <Link href={"/free"}>
+          <Link             href={"/login"}>
             <Button
               variant={"outline"}
               className="
@@ -61,7 +61,7 @@ const ActionButtons = () => {
               Log in
             </Button>
           </Link>
-          <Link href={"/contact"}>
+          <Link             href={"/login"}>
             <Button className="hidden lg:block">Get Bird free</Button>
           </Link>
         </div>

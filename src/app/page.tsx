@@ -1,5 +1,4 @@
-import LandingPageOne from "@/components/landing-pages/light-saas/LandingPageOne";
-import LandingPageTwo from "@/components/landing-pages/dark-saas/LandingPageTwo";
+import LandingPageOne from "@/components/landing-page/light-saas/LandingPageOne";
 import { config } from "../../config";
 export const metadata = {
   title: "Home",
