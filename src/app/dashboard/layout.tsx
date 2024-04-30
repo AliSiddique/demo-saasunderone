@@ -1,4 +1,5 @@
-import DashboardHead from "@/components/ui/DashboardHead";
+import Dashboard from "@/components/ui/DashboardLayout";
+import DashboardHead from "@/components/ui/DashboardLayout";
 import ProtectedRoute from "@/lib/ProtectedRoute";
 import getCurrentUser from "@/lib/User";
 import { getUserSubscriptionPlan } from "@/lib/subscription";
@@ -14,8 +15,9 @@ export default async function Dashboardlayout({
   ProtectedRoute();
   return (
     <div>
-      <DashboardHead />
+      <Dashboard>
       {children}
+      </Dashboard>
     </div>
   );
 }
