@@ -5,6 +5,7 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { NextAuthOptions } from "next-auth";
 import { db } from "../../prisma/db";
 import { resend } from "./resend";
+import { MagicLinkEmail } from "@/components/email-templates/MagicLink";
 
 const adapter = PrismaAdapter(db);
 export const authOptions: NextAuthOptions = {
@@ -38,6 +39,7 @@ export const authOptions: NextAuthOptions = {
           to: identifier,
           subject: "Thank you for signing up to our wait list!",
           text: `Please click the link below to verify your email address: ${url}`,
+          react:MagicLinkEmail({ loginCode: url })
         });
       },
     }),
