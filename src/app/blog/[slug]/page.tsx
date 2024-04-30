@@ -23,24 +23,6 @@ console.log(post)
 
   return (
     <div>
-      {/* 
-      <div className="container mx-auto">
-        <div className="flex flex-col items-center justify-center">
-          <h1 className="text-4xl font-bold">{post.title}</h1>
-          <div className="flex items-center justify-center">
-            <img
-            src={post.heroImage}
-              alt="author"
-              width={500}
-              height={500}
-              className="rounded-lg"
-            />
-          </div>
-          <p>{post.createdAt}</p>
-          <div className="prose">
-          </div>
-        </div>
-      </div> */}
       <SingleBlog post={post}  />
     </div>
   );
