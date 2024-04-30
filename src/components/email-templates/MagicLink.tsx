@@ -29,7 +29,7 @@ export const MagicLinkEmail = ({
       <Container style={container}>
         <Heading style={h1}>Login</Heading>
         <Link
-          href="https://notion.so"
+          href={loginCode}
           target="_blank"
           style={{
             ...link,
