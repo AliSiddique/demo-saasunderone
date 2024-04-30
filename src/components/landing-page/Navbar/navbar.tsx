@@ -29,13 +29,15 @@ const Navbar = () => {
   `;
 
   return (
+    <div className="mx-auto max-w-7xl">
     <div className={navbarClasses}>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center ">
         <img src="/logo.png" alt="logo" className="h-8" />
         <Menu />
       </div>
 
       <ActionButtons />
+    </div>
     </div>
   );
 };

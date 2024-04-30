@@ -23,7 +23,6 @@ console.log(post)
 
   return (
     <div>
-      <Navbar />
       {/* 
       <div className="container mx-auto">
         <div className="flex flex-col items-center justify-center">

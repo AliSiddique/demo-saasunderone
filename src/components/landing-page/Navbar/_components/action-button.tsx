@@ -22,28 +22,7 @@ const ActionButtons = () => {
   return (
     <div className="pr-2">
       <div className=" items-center justify-center flex ">
-        <div className="flex xl:space-x-4">
-          <Link
-            href={"/login"}
-            className="
-            lg:flex
-            items-center
-            hidden
-            
-            "
-          >
-            <div className="">Request a demo</div>
-          </Link>
-
-          <div
-            className="font-thin     
-        lg:flex
-            items-center
-            hidden"
-          >
-            |
-          </div>
-        </div>
+   
 
         <div className="flex lg:space-x-4 items-center pr-4">
           <Link             href={"/login"}>
