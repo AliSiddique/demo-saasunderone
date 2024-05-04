@@ -8,7 +8,6 @@ import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useSession } from "next-auth/react";
-import { getUserSubscriptionPlan } from "@/lib/subscription";
 
 type Props = {
   isPro: boolean;
@@ -69,7 +68,7 @@ export default function ProfileForm({ isPro }: Props) {
         type="email"
         className="text-gray-800 dark:text-white"
       />
-      <Card className=" border-gray-300 px-0 mt-5">
+      <Card className="bg-white dark:bg-black border-gray-300 px-0 mt-5">
         <CardHeader>Billing</CardHeader>
 
         <CardContent>
@@ -95,7 +94,6 @@ export default function ProfileForm({ isPro }: Props) {
               <Button
                 onClick={(e) => handleCheckout(e)}
                 variant={"default"}
-                className=""
               >
                 Subscribe
               </Button>
