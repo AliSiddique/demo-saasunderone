@@ -2,29 +2,15 @@
 import Image from "next/image"
 import Link from "next/link"
 import {
-  File,
+  CircleUser,
   Home,
-  LineChart,
-  ListFilter,
-  MoreHorizontal,
-  Package,
   Package2,
   PanelLeft,
-  PlusCircle,
-  Search,
   Settings,
   ShoppingCart,
-  Users2,
 } from "lucide-react"
 
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+
 import { Button } from "@/components/ui/button"
 
 import {
@@ -35,22 +21,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs"
+
 import {
   Tooltip,
   TooltipContent,
@@ -59,12 +31,14 @@ import {
 } from "@/components/ui/tooltip"
 import { signOut } from "next-auth/react"
 import { config } from "../../../config"
+import { useRouter } from "next/navigation"
 
 interface DashboardProps {
   children: React.ReactNode
 }
 
 export default function Dashboard({children}: DashboardProps) {
+  const router = useRouter()
   return (
     <TooltipProvider>
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
@@ -74,7 +48,7 @@ export default function Dashboard({children}: DashboardProps) {
             href="#"
             className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
           >
-            <Package2 className="h-4 w-4 transition-all group-hover:scale-110" />
+            <Image src="/logo.png" width={32} height={32} alt={config.name} />
             <span className="sr-only">Acme Inc</span>
           </Link>
           <Tooltip>
@@ -145,12 +119,7 @@ export default function Dashboard({children}: DashboardProps) {
           </Sheet>
        
           <div className="relative ml-auto flex-1 md:grow-0">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search..."
-              className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[320px]"
-            />
+           
           </div>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -159,20 +128,17 @@ export default function Dashboard({children}: DashboardProps) {
                 size="icon"
                 className="overflow-hidden rounded-full"
               >
-                <Image
-                  src="/placeholder-user.jpg"
-                  width={36}
-                  height={36}
-                  alt="Avatar"
-                  className="overflow-hidden rounded-full"
-                />
+                <CircleUser className="h-6 w-6" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={() => signOut()}>Logout</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => {
+                signOut()
+              router.push("/login")
+              }}>Logout</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
