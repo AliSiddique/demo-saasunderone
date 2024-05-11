@@ -65,8 +65,8 @@ const FifthSection = () => {
         
                 ${
                   activeTab.name === tab.name
-                    ? "rounded-md md:rounded-xl bg-[#f6f5f4]  md:bg-white border-gray-200 md:border items-center justify-center flex p-1 "
-                    : "md:bg-[#f6f5f4]   rounded-md xl:rounded-xl p-1 items-center justify-center hover:bg-[#eae7e7] "
+                    ? "rounded-md md:rounded-xl  md:border items-center justify-center flex p-1 "
+                    : "   rounded-md xl:rounded-xl p-1 items-center justify-center hover:bg-[#eae7e7] "
                 } `}
             onClick={() => setActiveTab(tab)}
           >
@@ -83,7 +83,7 @@ const FifthSection = () => {
       {/* Display content based on the active tab */}
       <div className="py-10   lg:px-16 xl:px-0 md:px-16  w-full ">
         {activeTab && (
-          <div className=" flex justify-center items-center flex-col  ">
+          <div className=" flex justify-center items-center flex-col bg-white ">
             <Image
               src={activeTab.image}
               width={1025}

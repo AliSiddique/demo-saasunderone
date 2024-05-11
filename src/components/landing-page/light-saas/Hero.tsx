@@ -13,6 +13,7 @@ import { useMediaQuery } from "react-responsive";
 
 import { useState } from "react";
 import { ArrowBigDown } from "lucide-react";
+import { Label } from "@/components/ui/label";
 
 const tabs = [
   {
@@ -83,10 +84,7 @@ const HeroSection = () => {
   return (
     <div className="md:items-center flex flex-col ">
       <div
-        className="
-     
-          font-medium
-        
+        className="font-medium
           2xl:w-1/3
           md:w-2/3
           xl:w-1/2
@@ -159,16 +157,16 @@ const HeroSection = () => {
         
                 ${
                   activeTab.name === tab.name
-                    ? "rounded-md md:rounded-xl bg-[#f6f5f4]  md:bg-white border-gray-200 md:border items-center justify-center flex p-1 "
-                    : "md:bg-[#f6f5f4]   rounded-md xl:rounded-xl p-1 items-center justify-center hover:bg-[#eae7e7] "
+                    ? "rounded-md md:rounded-xl  md:border items-center justify-center flex p-1 "
+                    : "  rounded-md xl:rounded-xl p-1 items-center justify-center hover:bg-[#eae7e7] "
                 } `}
                 onClick={() => setActiveTab(tab)}
               >
                 <div className="flex flex-col   items-center md:justify-center mx-auto">
                   <div className="hidden md:flex text-4xl">{tab.icon}</div>
-                  <div className="font-medium text-sm  xl:text-lg mt-1">
+                  <Label className="font-medium text-sm  xl:text-lg mt-1">
                     {tab.name}
-                  </div>
+                  </Label>
                 </div>
               </motion.div>
             ))}
@@ -214,8 +212,8 @@ const HeroSection = () => {
                 h-36
                 ${
                   activeTab === tab
-                    ? "border rounded-xl pt-2 bg-white "
-                    : "shadow-md rounded-xl pt-2  bg-[#f6f5f4] m"
+                    ? "border rounded-xl pt-2  "
+                    : "shadow-md rounded-xl pt-2 m"
                 }
               `}
               onMouseEnter={() => setActiveTab(tab)}

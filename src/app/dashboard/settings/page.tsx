@@ -6,11 +6,11 @@ import React from "react";
 type Props = {};
 
 export default async function page({}: Props) {
-  const user = await getCurrentUser();
-  const subscription = await getUserSubscriptionPlan(user.id);
+  // const user = await getCurrentUser();
+  // const subscription = await getUserSubscriptionPlan(user.id);
   return (
     <div>
-      <ProfileForm isPro={subscription.isPro} />
+      <ProfileForm isPro={true} />
     </div>
   );
 }

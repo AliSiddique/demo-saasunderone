@@ -39,7 +39,7 @@ const DropdownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="w-screen h-screen bg-white  px-4 items-center justify-center absolute  right-0 xl:hidden">
+    <div className="w-screen h-screen   px-4 items-center justify-center absolute  right-0 xl:hidden">
       <Accordion
         defaultValue="item-1"
         className="

@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 
 import { Table } from "lucide-react";
 import { Lora } from "next/font/google";
+import { Label } from "@/components/ui/label";
 
 const font = Lora({
   subsets: ["latin"],
@@ -122,13 +123,13 @@ const SixthSection = () => {
               col-span-12
               ${
                 index <= 2
-                  ? "md:col-span-6 lg:col-span-4 bg-[#f6f5f4] p-6 rounded-xl flex"
+                  ? "md:col-span-6 lg:col-span-4  p-6 rounded-xl flex"
                   : index <= 4
-                    ? "md:col-span-6 bg-[#f6f5f4] p-6 rounded-xl flex"
+                    ? "md:col-span-6  p-6 rounded-xl flex"
                     : index === 5
-                      ? " md:col-span-6  lg:col-span-8  lg:row-span-3    bg-[#f6f5f4] p-6 rounded-xl "
+                      ? " md:col-span-6  lg:col-span-8  lg:row-span-3    p-6 rounded-xl "
                       : index > 5
-                        ? "col-span-12 lg:col-span-4  md:col-span-4 bg-[#f6f5f4] p-6 rounded-xl flex-col "
+                        ? "col-span-12 lg:col-span-4  md:col-span-4  p-6 rounded-xl flex-col "
                         : "l"
               }
             `}
@@ -150,7 +151,7 @@ const SixthSection = () => {
                       width={1025}
                       height={500}
                       alt="logo"
-                      className="w-full  rounded-xl p-10 xl:p-20"
+                      className="w-full  rounded-xl p-10 xl:p-20 bg-white"
                     />
                   </div>
                 </div>
@@ -163,13 +164,13 @@ const SixthSection = () => {
                         alt={`${tab.images[activeImageIndex].title} Image`}
                         width={1025}
                         height={500}
-                        className="w-full rounded-xl "
+                        className="w-full rounded-xl bg-white"
                       />
 
                       <div>
-                        <div className="text-xl font-medium mt-10 md:mt-0  pb-4">
+                        <Label className="text-xl font-medium mt-10 md:mt-0  pb-4">
                           {tab.images[activeImageIndex].title}
-                        </div>
+                        </Label>
                       </div>
 
                       <div className="flex space-x-2 xl:space-x-6 xl:mt-10">
@@ -197,7 +198,7 @@ const SixthSection = () => {
                         width={500}
                         height={500}
                         alt="logo"
-                        className="w-10 h-10 rounded-full border p-1"
+                        className="w-10 h-10 rounded-full border p-1 bg-white"
                       />
                     </div>
                     <div className="text-xl font-normal ">{tab.userName}</div>

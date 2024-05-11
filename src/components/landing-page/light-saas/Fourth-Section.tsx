@@ -80,7 +80,7 @@ const FourthSection = () => {
                 index === 0
                   ? " xl:col-span-4 xl:row-span-3  md:col-span-2   flex-col  xl:flex-col"
                   : "xl:col-span-2 xl:row-span-3 flex-col "
-              } bg-[#f6f5f4] p-6 rounded-xl  flex `}
+              }  p-6 rounded-xl  flex `}
             >
               <div className="flex flex-col ">
                 {tab.icon}
@@ -110,7 +110,7 @@ const FourthSection = () => {
                           className={`${
                             index === activeImageIndex
                               ? "rounded-md bg-[#dbd9d9] items-center justify-center flex p-1 "
-                              : "  rounded-md p-1 items-center justify-center bg-[#f6f5f4] hover:bg-[#eae7e7] "
+                              : "  rounded-md p-1 items-center justify-center "
                           }  `}
                         >
                           <div className=" text-sm items-center justify-center flex">

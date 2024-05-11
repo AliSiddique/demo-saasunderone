@@ -14,7 +14,7 @@ export default async function Dashboardlayout({
   ProtectedRoute();
   return (
     <div>
-      <Dashboard>
+      <Dashboard subscription={"PRO"}>
       {children}
       </Dashboard>
     </div>

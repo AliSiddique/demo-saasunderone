@@ -88,7 +88,7 @@ const SeventhSection = () => {
               index === 0
                 ? " xl:col-span-2 xl:row-span-3  md:col-span-2  flex-col md:flex-row xl:flex-col"
                 : ""
-            } bg-[#f6f5f4] p-6 rounded-xl  flex ${
+            }  p-6 rounded-xl  flex ${
               index === 0 ? "justify-between" : ""
             }`}
           >
