@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useSession } from "next-auth/react";
+import { Loader } from "lucide-react";
 
 type Props = {
   isPro: boolean;
@@ -16,6 +17,7 @@ type Props = {
 export default function ProfileForm({ isPro }: Props) {
   const { data: session } = useSession();
   const [isLoading, setIsLoading] = React.useState(false);
+
   async function handleCheckout(event: FormEvent) {
     event.preventDefault();
     setIsLoading(true);
@@ -88,6 +90,7 @@ export default function ProfileForm({ isPro }: Props) {
                 variant={"default"}
                 className=""
               >
+                {isLoading && <Loader className="w-4 h-4 mr-2 animate-spin" />}
                 Portal
               </Button>
             ) : (
@@ -95,6 +98,8 @@ export default function ProfileForm({ isPro }: Props) {
                 onClick={(e) => handleCheckout(e)}
                 variant={"default"}
               >
+                                {isLoading && <Loader className="w-6 h-6 mr-2 animate-spin" />}
+
                 Subscribe
               </Button>
             )}
