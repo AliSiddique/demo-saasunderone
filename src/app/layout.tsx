@@ -34,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+      <script defer src="https://unpkg.com/@tinybirdco/flock.js" data-host="https://api.eu-central-1.aws.tinybird.co" data-token="p.eyJ1IjogIjJhNjU4MjMxLTI2ZDItNDkyNy05YTgwLTFmZDM5ODE2ODI2MyIsICJpZCI6ICJmMGVhNDQxMC0xOTY3LTRmZWEtODJhNy0wOTc4NWEyZjM1NWMiLCAiaG9zdCI6ICJhd3MtZXUtY2VudHJhbC0xIn0.A5JUa9HXhOM_O0T3l48fYZyiIDVd_odsUoIHYK9k-jM"></script>
         <GoogleAnalytics GA_TRACKING_ID={config.googleAnalyticsId} />
       </head>
       <body className={inter.className}>
