@@ -1,0 +1,92 @@
+---
+title: "Getting Started with Next.JS"
+brief: "Learn how to build a simple blog using Next.JS and Tailwind CSS."
+heroImage: https://images.unsplash.com/photo-1711994872181-1e112e5e18e0?q=80&w=3030&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+readTimeInMinutes: 2
+createdAt: 2023-04-04
+author: Ali
+---
+
+Learn how to build a simple blog using Next.JS and Tailwind CSS.
+
+## Prerequisites
+
+Before you start, make sure you have the following installed on your machine:
+ 
+- Node.js
+- npm or yarn
+- Next.js
+
+## Step 1: Create a New Next.js App
+
+Open your terminal and run the following command to create a new Next.js app:
+
+```bash
+npx create-next-app my-blog
+```
+
+Replace `my-blog` with the name of your app.
+
+## Step 2: Install Tailwind CSS
+
+Next, install Tailwind CSS by running the following command in your terminal:
+
+```bash
+npm install tailwindcss
+```
+
+## Step 3: Configure Tailwind CSS
+
+Create a `tailwind.config.js` file in the root of your project and add the following code:
+
+```js
+module.exports = {
+  mode: 'jit',
+  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+## Step 4: Add Tailwind CSS to Your App
+
+Open the `styles/globals.css` file and add the following code:
+
+```css
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+```
+
+## Step 5: Run Your App
+
+Start your Next.js app by running the following command in your terminal:
+
+```bash
+npm run dev
+```
+
+Your app should now be running on `http://localhost:3000`.
+
+## Conclusion
+
+
+In this tutorial, you learned how to build a simple blog using Next.JS and Tailwind CSS. You can now customize your blog further by adding more pages, components, and styles.
+
+If you're interested in learning more about Next.js, check out the [official documentation](https://nextjs.org/docs).
+
+```swift
+@IBOutlet weak var helloLabel: UILabel!
+
+```
+
+## Step 4: Write the Code
+
+Open the ViewController.swift file and add the following code to the viewDidLoad() method:
+

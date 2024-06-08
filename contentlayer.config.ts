@@ -41,21 +41,7 @@ import {
     },
   }));
   
-  export const Log = defineDocumentType(() => ({
-    name: "Log",
-    contentType: "mdx",
-    filePathPattern: `changelog/*.mdx`,
-    fields: {
-      title: { type: "string", required: true },
-      author: { type: "string", required: true },
-      heroImage: { type: "string", required: true },
-      createdAt: { type: "date", required: true },
-      updatedAt: { type: "date", required: false },
-    },
-    computedFields: {
-      ...computedSlugFields,
-    },
-  }));
+
   
   export const Post = defineDocumentType(() => ({
     name: "Post",
@@ -118,66 +104,7 @@ import {
   
   export type DocHeading = { level: 1 | 2 | 3; title: string };
   
-  export const Doc = defineDocumentType(() => ({
-    name: "Doc",
-    filePathPattern: `docs/**/*.mdx`,
-    contentType: "mdx",
-    fields: {
-      title: {
-        type: "string",
-        description: "The title of the page",
-        required: true,
-      },
-      label: {
-        type: "string",
-      },
-      excerpt: {
-        type: "string",
-        required: true,
-      },
-    },
-    computedFields: {
-      url_path: {
-        type: "string",
-        description:
-          'The URL path of this page relative to site root. For example, the site root page would be "/", and doc page would be "docs/getting-started/"',
-        resolve: computeUrlFromFilePath,
-      },
-      pathSegments: {
-        type: "json",
-        resolve: (doc) =>
-          doc._raw.flattenedPath
-            .split("/")
-            // skip `/docs` prefix
-            .slice(1)
-            .map((dirName) => {
-              return extractOrderFromWord(dirName);
-            }),
-      },
-      headings: {
-        type: "json",
-        resolve: async (doc) => {
-          const headings: DocHeading[] = [];
-  
-          await bundleMDX({
-            source: doc.body.raw,
-            mdxOptions: (opts) => {
-              opts.remarkPlugins = [
-                ...(opts.remarkPlugins ?? []) as any,
-                tocPlugin(headings),
-              ];
-  
-              return opts;
-            },
-          });
-  
-          return [{ level: 1, title: doc.title }, ...headings];
-        },
-      },
-      last_edited: { type: "date", resolve: getLastEditedDate("content") },
-    },
-    extensions: {},
-  }));
+
   
   const tocPlugin =
     (headings: DocHeading[]): unified.Plugin =>
@@ -205,7 +132,7 @@ import {
   
   export default makeSource({
     contentDirPath: "content",
-    documentTypes: [Post, Author, Log, Doc, CodePage],
+    documentTypes: [Post, Author, CodePage],
     mdx: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [
