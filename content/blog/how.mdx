@@ -1,85 +1,39 @@
 ---
-title: "Getting Started with Next.JS"
-brief: Learn how to build a simple blog using Next.JS and Tailwind CSS.
-heroImage: https://images.unsplash.com/photo-1711994872181-1e112e5e18e0?q=80&w=3030&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-readTimeInMinutes: 2
+title: "Getting Started with Swift: Creating Your First iOS App"
+brief: Learn the basics of Swift programming and how to create a simple iOS app from scratch.
+heroImage: https://res.cloudinary.com/dmffaoohj/image/upload/v1680613340/header-image_hzy1cd.png
+readTimeInMinutes: 7
 createdAt: 2023-04-04
-author: Ali
+author: amy-kline
 ---
 
-Learn how to build a simple blog using Next.JS and Tailwind CSS.
+Learn the basics of Swift programming and how to create a simple iOS app from scratch.
 
 ## Prerequisites
 
-Before you start, make sure you have the following installed on your machine:
- 
-- Node.js
-- npm or yarn
-- Next.js
+Before we begin, make sure you have the following:
 
-## Step 1: Create a New Next.js App
+- A Mac computer running macOS 10.15 or later
+- Xcode 12 or later installed
+- Basic knowledge of programming concepts
 
-Open your terminal and run the following command to create a new Next.js app:
+## Step 1: Create a New Xcode Project
 
-```bash
-npx create-next-app my-blog
-```
+Open Xcode and create a new project by selecting "App" under "iOS" and clicking "Next". Choose "Swift" as the language and "Storyboard" as the user interface option. Click "Next" and enter a product name for your app, such as "HelloWorld". Choose a location to save your project and click "Create".
 
-Replace `my-blog` with the name of your app.
+## Step 2: Design the User Interface
 
-## Step 2: Install Tailwind CSS
+In the Xcode project navigator, open the Main.storyboard file. This is where you'll design the user interface for your app.
 
-Next, install Tailwind CSS by running the following command in your terminal:
+Drag a "Label" object from the Object Library onto the view controller. Resize the label and center it horizontally and vertically on the view.
 
-```bash
-npm install tailwindcss
-```
+## Step 3: Connect the Label to Code
 
-## Step 3: Configure Tailwind CSS
+To update the text of the label from code, we need to create an outlet connection between the label and the view controller.
 
-Create a `tailwind.config.js` file in the root of your project and add the following code:
+Open the Assistant Editor by clicking the "Show Assistant Editor" button in the Xcode toolbar. Make sure "Automatic" is selected under "Preview".
 
-```js
-module.exports = {
-  mode: 'jit',
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
-
-## Step 4: Add Tailwind CSS to Your App
-
-Open the `styles/globals.css` file and add the following code:
-
-```css
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-```
-
-## Step 5: Run Your App
-
-Start your Next.js app by running the following command in your terminal:
-
-```bash
-npm run dev
-```
-
-Your app should now be running on `http://localhost:3000`.
-
-## Conclusion
-
-
-In this tutorial, you learned how to build a simple blog using Next.JS and Tailwind CSS. You can now customize your blog further by adding more pages, components, and styles.
-
-If you're interested in learning more about Next.js, check out the [official documentation](https://nextjs.org/docs).
+Ctrl-drag from the label to the view controller code to create an outlet. Name the outlet "helloLabel".
 
 ```swift
 @IBOutlet weak var helloLabel: UILabel!
@@ -90,3 +44,43 @@ If you're interested in learning more about Next.js, check out the [official doc
 
 Open the ViewController.swift file and add the following code to the viewDidLoad() method:
 
+```swift
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var helloLabel: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        helloLabel.text = "Hello, World!"
+    }
+
+}
+
+```
+
+## Step 5: Run the App
+
+Click the "Run" button in the Xcode toolbar to run the app. You should see the label change to "Hello, World!".
+
+## Conclusion
+
+In this tutorial, you learned how to create a simple iOS app using Swift. You also learned how to design the user interface and connect the user interface elements to code.
+
+If you're interested in learning more about Swift and iOS development, check out the resources below:
+
+- [Swift Programming Language](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
+
+- [Apple Developer Documentation](https://developer.apple.com/documentation/)
+
+- [SwiftUI](https://developer.apple.com/xcode/swiftui/)
+
+- [SwiftUI Essentials](https://developer.apple.com/tutorials/swiftui/)
+
+- [SwiftUI Tutorials](https://www.hackingwithswift.com/quick-start/swiftui)
+
+## ChatGPT
+
+This post was generated by [ChatGPT](https://chatgpt.com/) and is an example of how you can create your own blog posts with Scalerepo.
