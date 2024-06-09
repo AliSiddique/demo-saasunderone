@@ -4,6 +4,7 @@ import Navbar from "@/components/landing-page/Navbar";
 import Hero from "@/components/landing-page/Hero";
 import Feature from "@/components/landing-page/Features";
 import Footer from "@/components/landing-page/Footer";
+
 export const metadata = {
   title: "Home",
   description: "Home Page",

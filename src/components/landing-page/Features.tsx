@@ -10,7 +10,6 @@ import {
   export default function Feature() {
     return (
       <>
-        {/* Icon Blocks */}
         <div className="container py-24 lg:py-32">
           <div className="max-w-4xl mx-auto">
             {/* Grid */}

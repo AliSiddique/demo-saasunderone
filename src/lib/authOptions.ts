@@ -6,7 +6,6 @@ import { NextAuthOptions } from "next-auth";
 import { db } from "../../prisma/db";
 import { resend } from "./resend";
 import { MagicLinkEmail } from "@/components/email-templates/MagicLink";
-
 const adapter = PrismaAdapter(db);
 export const authOptions: NextAuthOptions = {
   secret: process.env.SECRET!,
