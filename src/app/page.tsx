@@ -1,5 +1,9 @@
-import LandingPageOne from "@/components/landing-page/light-saas/LandingPageOne";
+import getCurrentUser from "@/lib/User";
 import { config } from "../../config";
+import Navbar from "@/components/landing-page/Navbar";
+import Hero from "@/components/landing-page/Hero";
+import Feature from "@/components/landing-page/Features";
+import Footer from "@/components/landing-page/Footer";
 export const metadata = {
   title: "Home",
   description: "Home Page",
@@ -19,6 +23,14 @@ export const metadata = {
   },
   category: config.category,
 };
-export default function page() {
-  return <LandingPageOne />;
+export default async function page() {
+  const user = await getCurrentUser();
+  return (
+    <>
+    <Navbar user={user} />
+    <Hero />
+    <Feature />
+    <Footer />
+    </>
+  )
 }
