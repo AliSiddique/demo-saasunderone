@@ -1,15 +1,18 @@
-import Navbar from "@/components/landing-page/Navbar/navbar";
-import Footer from "@/components/landing-page/light-saas/Footer";
+
+import Footer from "@/components/landing-page/Footer";
+import Navbar from "@/components/landing-page/Navbar";
+import getCurrentUser from "@/lib/User";
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const user = await getCurrentUser()
   return (
     <div>
-        <Navbar />
+        <Navbar user={user} />
         {children}
         <Footer />
     </div>
