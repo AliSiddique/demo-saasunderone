@@ -2,7 +2,6 @@ import { getPostBySlug } from "@/lib/mdx";
 import Image from "next/image";
 import React from "react";
 import { allAuthors, allPosts } from "contentlayer/generated";
-import Navbar from "@/components/landing-page/Navbar/navbar";
 import SingleBlog from "@/components/ui/SingleBlog";
 
 type Props = {
