@@ -74,7 +74,15 @@ export default function Navbar({user}: NavbarProps) {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="secondary" size="icon" className="rounded-full">
-                  <CircleUser className="h-5 w-5" />
+                  {user?.image ? (
+                    <img
+                      src={user.image}
+                      alt="User profile"
+                      className="h-8 w-8 rounded-full"
+                    />
+                  ) : (
+                    <CircleUser className="h-5 w-5" />
+                  )}
                   <span className="sr-only">Toggle user menu</span>
                 </Button>
               </DropdownMenuTrigger>
